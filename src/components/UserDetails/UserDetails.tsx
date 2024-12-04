@@ -13,17 +13,17 @@ interface UserDetailsProps {
 export const UserDetails: React.FC<UserDetailsProps> = ({ user }) => {
 
     return (
-        <Card className="w-[300px]">
+        <Card className="w-[400px] mx-auto mt-20">
             <CardHeader>
                 <CardTitle>{user.name}</CardTitle>
             </CardHeader>
             <CardContent>
-                <p>{user.username}</p>
-                <p>{user.email}</p>
-                <p>{user.address.street}, {user.address.city}</p>
-                <p>{user.phone}</p>
-                <p>{user.website}</p>
-                <p>{user.company.name}</p>
+                <p><b>username:</b> {user.username}</p>
+                <p><b>email:</b> {user.email}</p>
+                <p><b>address:</b> {user.address.street}, {user.address.city}</p>
+                <p><b>tel.</b> {user.phone}</p>
+                <p><b>website:</b> {user.website}</p>
+                <p><b>company:</b> {user.company.name}</p>
             </CardContent>
         </Card>
     );

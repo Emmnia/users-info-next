@@ -20,11 +20,11 @@ export const UserCard: React.FC<UserCardProps> = ({ user }) => {
 
   const handleDetailsClick = () => {
     localStorage.setItem(`user_${user.id}`, JSON.stringify(user));
-    router.push(`/${user.id}`);
+    router.push(`/user/${user.id}`);
   }
 
   return (
-    <Card className="w-[300px]">
+    <Card className="w-[250px]">
       <CardHeader>
         <CardTitle>{user.name}</CardTitle>
       </CardHeader>
