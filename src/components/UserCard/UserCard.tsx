@@ -19,12 +19,11 @@ export const UserCard: React.FC<UserCardProps> = ({ user }) => {
   const router = useRouter();
 
   const handleDetailsClick = () => {
-    localStorage.setItem(`user_${user.id}`, JSON.stringify(user));
     router.push(`/user/${user.id}`);
   }
 
   return (
-    <Card className="w-[250px]">
+    <Card className="w-[250px] animate-fade animate-once animate-duration-700 animate-delay-300 animate-ease-in">
       <CardHeader>
         <CardTitle>{user.name}</CardTitle>
       </CardHeader>
@@ -33,6 +32,7 @@ export const UserCard: React.FC<UserCardProps> = ({ user }) => {
         <p>{user.email}</p>
       </CardContent>
       <CardFooter>
+        {/* думаю, здесь теперь лучше использовать Link (раньше была другая логика), но боюсь, на стилизацию ее под такую же кнопку с помощью tailwind я пока потрачу столько же времени, сколько на остальной проект  */}
         <Button onClick={handleDetailsClick}>Details</Button>
       </CardFooter>
     </Card>

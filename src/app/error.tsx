@@ -1,6 +1,9 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect } from 'react';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link'
+
 
 export default function Error({
     error,
@@ -14,9 +17,10 @@ export default function Error({
     }, [error])
 
     return (
-        <div>
+        <div className="w-[400px] mx-auto mt-20 flex flex-col flex-wrap gap-5 content-center">
             <h2>Something went wrong!</h2>
-            <button onClick={() => reset()}>Try again</button>
+            <Button onClick={() => reset()}>Try again</Button>
+            <Link href="/" className="self-center">&larr; Back to User List</Link>
         </div>
     )
 }

@@ -6,10 +6,10 @@ import { getUsers } from "@/lib/api";
 export default async function Home() {
   const users: User[] = await getUsers();
 
-  if (!users || users.length === 0) notFound();
+  if (!users) notFound();
 
   return (
-    <div className="flex flex-wrap gap-3 p-8">
+    <div className="flex flex-wrap justify-center gap-3 py-20 px-8">
       {users.map((user) => (
         <UserCard key={user.id} user={user} />
       ))}
