@@ -1,27 +1,13 @@
-'use client';
-
 import { UserDetails } from "@/components/UserDetails/UserDetails";
-import { useEffect, useState } from "react";
-import { use } from 'react';
+import { notFound } from 'next/navigation';
+import { getUser } from "@/lib/api";
 
-export default function Details({ params }: { params: Promise<{ id: string }> }) {
-    const unwrappedParams = use(params);
-    const [user, setUser] = useState(null);
+export default async function UserPage({ params }: { params: { id: string } }) {
+    const { id } = await params;
 
-    const id = unwrappedParams.id;
+    const user = await getUser(id);
 
-    useEffect(() => {
-        const storedUser = localStorage.getItem(`user_${id}`);
-        if (storedUser) {
-            setUser(JSON.parse(storedUser));
-        }
-    }, [id]);
+    if (!user) notFound();
 
-    if (!user) {
-        return <div>User not found</div>;
-    }
-
-    return (
-        <UserDetails user={user} />
-    );
-}
+    return <UserDetails user={user} />;
+};

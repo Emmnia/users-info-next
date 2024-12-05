@@ -1,26 +1,17 @@
 import { UserCard } from "@/components/UserCard/UserCard";
 import { User } from "@/models/user";
+import { notFound } from "next/navigation";
+import { getUsers } from "@/lib/api";
 
 export default async function Home() {
-  let users: User[] = [];
+  const users: User[] = await getUsers();
 
-  try {
-    const response = await fetch('https://jsonplaceholder.typicode.com/users');
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    users = await response.json();
-  } catch (error) {
-    console.error('Error loading users:', error);
-  }
+  if (!users || users.length === 0) notFound();
 
   return (
     <div className="flex flex-wrap gap-3 p-8">
-      {Array.isArray(users) && users.map((user) => (
-        <UserCard
-          key={user.id}
-          user={user}
-        />
+      {users.map((user) => (
+        <UserCard key={user.id} user={user} />
       ))}
     </div>
   );
