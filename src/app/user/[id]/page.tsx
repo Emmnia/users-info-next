@@ -1,12 +1,19 @@
 import { UserDetails } from "@/components/UserDetails/UserDetails";
 import { notFound } from 'next/navigation';
-import { getUser } from "@/lib/api";
+import { getUsers } from "@/lib/getUsers";
+import { User } from "@/models/user";
 import Link from 'next/link';
 
-export default async function UserPage({ params }: { params: { id: string } }) {
-    const { id } = await params;
+export async function generateStaticParams() {
+    const users: User[] = await getUsers();
+    return users.map((user) => ({
+        id: user.id.toString(),
+    }));
+}
 
-    const user = await getUser(id);
+export default async function UserPage({ params }: { params: { id: string } }) {
+    const users = await getUsers();
+    const user = users.find((u: User) => u.id.toString() === params.id);
 
     if (!user) notFound();
 

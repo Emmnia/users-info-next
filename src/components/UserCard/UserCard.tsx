@@ -32,7 +32,6 @@ export const UserCard: React.FC<UserCardProps> = ({ user }) => {
         <p>{user.email}</p>
       </CardContent>
       <CardFooter>
-        {/* думаю, здесь теперь лучше использовать Link (раньше была другая логика), но боюсь, на стилизацию ее под такую же кнопку с помощью tailwind я пока потрачу столько же времени, сколько на остальной проект  */}
         <Button onClick={handleDetailsClick}>Details</Button>
       </CardFooter>
     </Card>

@@ -1,16 +1,18 @@
 import { UserCard } from "@/components/UserCard/UserCard";
-import { User } from "@/models/user";
 import { notFound } from "next/navigation";
-import { getUsers } from "@/lib/api";
+import { getUsers } from "@/lib/getUsers";
+import { User } from "@/models/user";
 
 export default async function Home() {
-  const users: User[] = await getUsers();
+  const users = await getUsers();
+  console.log(users);
+
 
   if (!users) notFound();
 
   return (
     <div className="flex flex-wrap justify-center gap-3 py-20 px-8">
-      {users.map((user) => (
+      {users.map((user: User) => (
         <UserCard key={user.id} user={user} />
       ))}
     </div>
