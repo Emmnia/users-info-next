@@ -21,7 +21,7 @@ export default async function UserPage({ params }: { params: Promise<{ id: strin
     return (
         <div className="text-center">
             <UserDetails user={user} />
-            <Link href="/" className="animate-fade animate-once animate-duration-700 animate-delay-300 animate-ease-in">&larr; Back to User List</Link>
+            <Link href="/" className="animate-fade animate-once animate-duration-700 animate-delay-300 animate-ease-in">&larr; <span className="hover:underline">Back to User List</span></Link>
         </div>
 
     )
