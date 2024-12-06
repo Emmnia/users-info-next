@@ -20,7 +20,7 @@ export const UsersContainer: React.FC<UsersContainerProps> = ({ initialUsers }) 
             setIsSearchActive(false);
         } else {
             const filtered = initialUsers.filter(user =>
-                user.name.toLowerCase().includes(query.toLowerCase())
+                user.name.toLowerCase().includes(query.toLowerCase()) || user.email.toLowerCase().includes(query.toLowerCase())
             );
             setFilteredUsers(filtered);
             setIsSearchActive(true);
