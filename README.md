@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Users Info Next.js Application
+
+## Project Overview
+
+This Next.js application showcases user information fetched from an external API. It demonstrates the use of Next.js 15 features, including the app router and server-side rendering with server components, along with the integration of shadcn UI components.
+
+## Key Features
+
+- Fetches user data from the [JSONPlaceholder API](https://jsonplaceholder.typicode.com/)
+- Displays a list of users with their basic information
+- Provides detailed user profiles with additional data
+- Implements a search functionality to filter users by name or email
+- Utilizes Next.js 15 app router for efficient routing
+- Employs server-side rendering and server components for improved performance and SEO
+- Integrates shadcn UI components for a modern and consistent user interface
+
+## Technologies Used
+
+- Next.js 15
+- React
+- Tailwind CSS for styling
+- TypeScript for type-safe code
+- shadcn UI for pre-built, customizable components
+
+## Project Structure
+
+- `app/`: Contains the main application code
+  - `page.tsx`: Home page component
+  - `users/[id]/page.tsx`: Dynamic route for individual user profiles
+- `components/`: Reusable React components, including shadcn UI components
+- `lib/`: Utility functions and type definitions
+- `public/`: Static assets
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Run the development server: `npm run dev`
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Data Fetching
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This project utilizes server-side rendering and server components for data fetching, leveraging the latest features of Next.js 15. This approach provides better performance and SEO benefits compared to client-side fetching.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## UI Components
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The application uses shadcn UI components, which offer a set of pre-built, customizable React components. These components enhance the overall look and feel of the application while maintaining consistency and accessibility.
