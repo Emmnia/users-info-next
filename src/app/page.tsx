@@ -5,8 +5,6 @@ import { User } from "@/models/user";
 
 export default async function Home() {
   const users = await getUsers();
-  console.log(users);
-
 
   if (!users) notFound();
 
