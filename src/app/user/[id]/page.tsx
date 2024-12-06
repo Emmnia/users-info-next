@@ -11,9 +11,10 @@ export async function generateStaticParams() {
     }));
 }
 
-export default async function UserPage({ params }: { params: { id: string } }) {
+export default async function UserPage({ params }: { params: Promise<{ id: string }> }) {
     const users = await getUsers();
-    const user = users.find((u: User) => u.id.toString() === params.id);
+    const { id } = await params;
+    const user = users.find((u: User) => u.id.toString() === id);
 
     if (!user) notFound();
 
