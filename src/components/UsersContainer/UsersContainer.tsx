@@ -35,7 +35,7 @@ export const UsersContainer: React.FC<UsersContainerProps> = ({ initialUsers }) 
     return (
         <div>
             <UserSearch onSearch={handleSearch} />
-            <h1 className="text-2xl font-bold text-center">Users</h1>
+            <h1 className="text-2xl font-bold text-center animate-fade animate-once animate-duration-700 animate-delay-300 animate-ease-in">Users</h1>
             <div className="flex flex-wrap justify-center gap-3 pt-10 px-8">
                 {filteredUsers.map(user => (
                     <UserCard key={user.id} user={user} />
