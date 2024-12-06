@@ -21,7 +21,7 @@ export const UserSearch: React.FC<UserSearchProps> = ({ onSearch }) => {
     };
 
     return (
-        <div className="flex w-full max-w-sm items-center space-x-2 mx-auto mt-20 mb-10">
+        <div className="flex w-full max-w-sm items-center space-x-2 mx-auto mt-20 mb-10 animate-fade animate-once animate-duration-700 animate-delay-300 animate-ease-in">
             <Input
                 type="text"
                 placeholder="Name"
