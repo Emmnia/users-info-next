@@ -13,7 +13,7 @@ interface UserDetailsProps {
 export const UserDetails: React.FC<UserDetailsProps> = ({ user }) => {
 
     return (
-        <Card className="w-[400px] mx-auto my-20 animate-fade animate-once animate-duration-700 animate-delay-300 animate-ease-in">
+        <Card className="w-5/6 md:w-[400px] mx-auto my-20 animate-fade animate-once animate-duration-700 animate-delay-300 animate-ease-in">
             <CardHeader>
                 <CardTitle>{user.name}</CardTitle>
             </CardHeader>
