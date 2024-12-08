@@ -23,13 +23,13 @@ export const UserCard: React.FC<UserCardProps> = ({ user }) => {
   }
 
   return (
-    <Card className="w-[250px] animate-fade animate-once animate-duration-700 animate-delay-300 animate-ease-in">
+    <Card className="w-[260px] flex flex-col animate-fade animate-once animate-duration-700 animate-delay-300 animate-ease-in hover:scale-105">
       <CardHeader>
         <CardTitle>{user.name}</CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className="flex-1">
         <p>{user.company.name}</p>
-        <p>{user.email}</p>
+        <p className="pt-3 text-gray-500">{user.email}</p>
       </CardContent>
       <CardFooter>
         <Button onClick={handleDetailsClick}>Details</Button>
